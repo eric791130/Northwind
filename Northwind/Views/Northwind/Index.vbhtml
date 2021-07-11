@@ -1,7 +1,7 @@
 ﻿@ModelType IEnumerable(Of Northwind.Customers)
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新增客戶資料", "Create")
 </p>
 <table class="table">
     <tr>
@@ -71,9 +71,9 @@
             @Html.DisplayFor(Function(modelItem) item.Fax)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", New With {.id = item.CustomerID }) |
-            @Html.ActionLink("Details", "Details", New With {.id = item.CustomerID }) |
-            @Html.ActionLink("Delete", "Delete", New With {.id = item.CustomerID })
+            @Html.ActionLink("編輯", "Edit", New With {.id = item.CustomerID}) |
+            @Html.ActionLink("詳細資料", "Details", New With {.id = item.CustomerID}) |
+            @Html.ActionLink("刪除", "Delete", New With {.id = item.CustomerID})
         </td>
     </tr>
 Next

@@ -98,8 +98,7 @@
     <div class="form-group">
         @Html.LabelFor(Function(model) model.Orders, htmlAttributes:=New With {.class = "control-label col-md-2"})
         <div class="col-md-10">
-            @Html.EditorFor(Function(model) model.Orders, New With {.htmlAttributes = New With {.class = "form-control"}})
-            @Html.ValidationMessageFor(Function(model) model.Orders, "", New With {.class = "text-danger"})
+            @Html.ActionLink("新增訂單資料", "CreateNewOrder")
         </div>
     </div>
 

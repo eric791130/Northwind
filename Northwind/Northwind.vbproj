@@ -244,6 +244,9 @@
     <Content Include="Views\Shared\_Layout.vbhtml" />
     <Content Include="Views\Northwind\Index.vbhtml" />
     <Content Include="Views\Northwind\Create.vbhtml" />
+    <Content Include="Views\Northwind\CreateNewOrder.vbhtml" />
+    <Content Include="Views\Northwind\Edit.vbhtml" />
+    <Content Include="Views\Northwind\Details.vbhtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
