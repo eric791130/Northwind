@@ -57,6 +57,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -123,13 +125,73 @@
     <Content Include="App_Data\northwnd_log.ldf">
       <DependentUpon>northwnd.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Models\dbNorthwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>dbNorthwind.Context.vb</LastGenOutput>
+      <DependentUpon>dbNorthwind.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\dbNorthwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbNorthwind.edmx</DependentUpon>
+      <LastGenOutput>dbNorthwind.vb</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Controllers\NorthwindController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categories.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerDemographics.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customers.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbNorthwind.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbNorthwind.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbNorthwind.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbNorthwind.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbNorthwind.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employees.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orders.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Details.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Products.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Region.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shippers.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Suppliers.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Territories.vb">
+      <DependentUpon>dbNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -160,6 +222,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\dbNorthwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbNorthwind.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\dbNorthwind.edmx.diagram">
+      <DependentUpon>dbNorthwind.edmx</DependentUpon>
+    </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -171,6 +240,10 @@
     </None>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.vbhtml" />
+    <Content Include="Views\Shared\_Layout.vbhtml" />
+    <Content Include="Views\Northwind\Index.vbhtml" />
+    <Content Include="Views\Northwind\Create.vbhtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,9 +251,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

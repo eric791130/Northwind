@@ -1,0 +1,119 @@
+﻿@ModelType Northwind.Customers
+
+@Using (Html.BeginForm()) 
+    @Html.AntiForgeryToken()
+    
+    @<div class="form-horizontal">
+    <h4>Customers</h4>
+    <hr />
+    @Html.ValidationSummary(True, "", New With {.class = "text-danger"})
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.CustomerID, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.CustomerID, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.CustomerID, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.CompanyName, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.CompanyName, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.CompanyName, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.ContactName, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ContactName, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ContactName, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.ContactTitle, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ContactTitle, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ContactTitle, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Address, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Address, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Address, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.City, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.City, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.City, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Region, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Region, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Region, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.PostalCode, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.PostalCode, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.PostalCode, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Country, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Country, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Country, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Phone, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Phone, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Phone, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Fax, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Fax, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Fax, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Orders, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Orders, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Orders, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+End Using
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
