@@ -2,6 +2,8 @@
 
 <p>
     @Html.ActionLink("新增客戶資料", "Create")
+    @Html.ActionLink("檢視訂單資料", "ListOrder")
+    @Html.ActionLink("刪除選取項目", "DeleteSelected")
 </p>
 <table class="table">
     <tr>
@@ -71,9 +73,12 @@
             @Html.DisplayFor(Function(modelItem) item.Fax)
         </td>
         <td>
+            <input type="checkbox" id="id" name="id" value="@item.CustomerID" />
             @Html.ActionLink("編輯", "Edit", New With {.id = item.CustomerID}) |
             @Html.ActionLink("詳細資料", "Details", New With {.id = item.CustomerID}) |
-            @Html.ActionLink("刪除", "Delete", New With {.id = item.CustomerID})
+            @Html.ActionLink("刪除", "Delete", New With {.id = item.CustomerID}) |
+            @Html.ActionLink("檢視客戶訂單", "ViewSelectedOrder", New With {.id = item.CustomerID}) |
+            @Html.ActionLink("編輯客戶訂單", "EditSelectedOrder", New With {.id = item.CustomerID}) |
         </td>
     </tr>
 Next

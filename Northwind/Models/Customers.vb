@@ -9,18 +9,46 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.ComponentModel.DataAnnotations
 
 Partial Public Class Customers
+
+    <Required>
     Public Property CustomerID As String
+
+    <Required>
+    <DisplayName("客戶名稱")>
     Public Property CompanyName As String
+
+    <Required>
+    <DisplayName("聯絡人")>
     Public Property ContactName As String
+
+    <Required>
+    <DisplayName("聯絡人職稱")>
     Public Property ContactTitle As String
+
+    <DisplayName("客戶地址")>
     Public Property Address As String
+
+    <DisplayName("城市")>
     Public Property City As String
+
+    <DisplayName("地區")>
     Public Property Region As String
+
+    <DisplayName("郵遞區號")>
     Public Property PostalCode As String
+
+    <DisplayName("城市")>
     Public Property Country As String
+
+    <Required>
+    <DisplayName("連絡電話")>
     Public Property Phone As String
+
+    <DisplayName("傳真")>
     Public Property Fax As String
 
     Public Overridable Property Orders As ICollection(Of Orders) = New HashSet(Of Orders)
